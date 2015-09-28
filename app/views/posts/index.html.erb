@@ -1,0 +1,8 @@
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+  <%= link_to post.title, "http://" + post.link %> | <%= link_to "Comments", show_post_path(post.id) %><br/>
+<% end %>
+<br/>
+<%= link_to "New Post", new_post_path %>
+
