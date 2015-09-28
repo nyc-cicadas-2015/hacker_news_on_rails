@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/posts/:id' => 'posts#show', as: 'show_post'
 
   get '/comments' => 'comments#index'
-  get '/comments/new' => 'comment#new', as: 'new_comment'
+  post '/comments' => 'comments#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
