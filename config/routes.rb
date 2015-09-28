@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/comments' => 'comments#index'
   post '/comments' => 'comments#create'
   resources :users
+  resources :sessions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

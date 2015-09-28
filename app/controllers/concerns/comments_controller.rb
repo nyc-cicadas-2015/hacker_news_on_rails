@@ -5,9 +5,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    user = User.find_by(id: session[:user_id])
     post = Post.find_by(id: params[:comment][:post])
-    post.comments.create(comments_params)
-    redirect_to "/posts"
+    post.comments.create(body: params[:comment][:body], user_id: user.id)
+    redirect_to show_post_path("#{post.id}")
   end
 
   private

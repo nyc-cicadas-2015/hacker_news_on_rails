@@ -1,6 +1,8 @@
 <h3> Here's what people are saying... </h3>
 
-<%= @comments.each do |comment| %>
-  <%= comment.body %><br/>
+<% @comments.each do |comment| %>
+  <%= link_to comment.post.title, "http://" + comment.post.link %><br/>
+  <%= comment.body %> | <%= comment.user.username %><br/>
+  <div id='spacer'></div>
 <% end %>
 

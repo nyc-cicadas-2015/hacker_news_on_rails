@@ -9,11 +9,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.new(posts_params)
+    post = current_user.posts.build(posts_params)
     if post.save
-      redirect_to "/posts/#{post.id}"
+      redirect_to show_post_path("#{post.id}")
     else
-      redirect_to "/posts/new"
+      redirect_to new_post_path
     end
   end
 
