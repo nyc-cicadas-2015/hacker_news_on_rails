@@ -26,3 +26,4 @@ describe "the login/logout process", :type => :feature do
   end
 
 end
+
