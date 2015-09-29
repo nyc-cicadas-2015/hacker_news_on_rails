@@ -2,7 +2,7 @@ require_relative '../rails_helper'
 
 describe "the signin process", :type => :feature do
   before :each do
-    create(:user)
+   create(:user)
   end
 
   let(:user) { attributes_for(:user)}
