@@ -2,16 +2,16 @@ require_relative '../rails_helper'
 
 describe "the signin process", :type => :feature do
   before :each do
-    User.create(:username => 'user@example.com', :password => 'password')
+    create(:user)
   end
 
-  let(:user) {User.find_by(username: 'user@example.com')}
+  let(:user) { attributes_for(:user)}
 
   it "signs me in" do
     visit '/sessions/new'
     within("#session") do
-      fill_in 'Username', :with => 'user@example.com'
-      fill_in 'Password', :with => 'password'
+      fill_in 'Username', :with => user[:username]
+      fill_in 'Password', :with => user[:password]
     end
     click_button 'Sign in'
     expect(page).to have_content 'Log out'
