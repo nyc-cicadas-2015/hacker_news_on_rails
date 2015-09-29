@@ -17,3 +17,12 @@
   border-top: 1px solid #404040;
   margin: 20px;
 }
+
+#login-bar{
+  border: 1px solid #404040;
+  width: 100%;
+  height: 25px;
+  background-color: orange;
+  text-align: right;
+  padding-right: 25px;
+}
