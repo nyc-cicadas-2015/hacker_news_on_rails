@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
+  validates :username, :presence => {:message => "must be present"}, :uniqueness => {:message => "must be unique"}
 
   include BCrypt
 
