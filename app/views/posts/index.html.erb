@@ -6,5 +6,8 @@
   <%= link_to post.title, "http://" + post.link %> | <%= link_to "Comments", show_post_path(post.id) %><br/>
 <% end %>
 <br/>
-<%= link_to "New Post", new_post_path %>
-
+<% if logged_in? %>
+  <%= link_to "New Post", new_post_path %>
+<% else %>
+  <%= link_to "Login to create new post", new_session_path %>
+<% end %>

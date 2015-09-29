@@ -3,4 +3,9 @@ FactoryGirl.define do
     username Faker::Internet.user_name
     password Faker::Internet.password(8)
   end
+
+  factory :post do
+    title Faker::Hacker.say_something_smart
+    link Faker::Internet.url
+  end
 end
