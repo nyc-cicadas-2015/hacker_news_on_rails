@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
+      flash[:error] = "Username already taken."
       redirect_to "/users/new"
     end
   end
