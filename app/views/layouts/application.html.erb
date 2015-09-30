@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <div id="nav-bar">
   <title>HackerNewsOnRails</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
-  <%= link_to "Comments", comments_path %>
-  <%= link_to "Posts", posts_path %>
-  <% if logged_in? %>
-  <%= link_to "Log out", session_path(current_user), :method => :delete %>
-  <% else %>
-  <%= link_to "Sign Up", new_user_path %>
-  <%= link_to "Login", new_session_path %>
-  <% end %>
+    <%= link_to "Comments", comments_path %> |
+    <%= link_to "Posts", posts_path %> |
+    <% if logged_in? %>
+    <%= link_to "Log out", session_path(current_user), :method => :delete %> |
+    <% else %>
+    <%= link_to "Sign Up", new_user_path %> |
+    <%= link_to "Login", new_session_path %>
+    <% end %>
+  </div>
 </head>
 
 <body>
 
-<%= yield %>
+<div id="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

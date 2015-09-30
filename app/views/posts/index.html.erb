@@ -3,7 +3,8 @@
 <h1>Posts</h1>
 
 <% @posts.each do |post| %>
-  <%= link_to post.title, "http://" + post.link %> | <%= link_to "Comments", show_post_path(post.id) %><br/>
+  <p id="post-title"><%= link_to post.title, "http://" + post.link %> | <span id="link">(<%= post.link %>)</span></p>
+  <p id="post-info">Submitted by <%= post.user.username %> on <%= post.created_at.strftime("%m/%d/%Y") %> | <%= link_to "Comments", show_post_path(post.id) %></p>
 <% end %>
 <br/>
 <% if logged_in? %>
