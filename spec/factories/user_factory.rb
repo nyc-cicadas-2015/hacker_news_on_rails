@@ -7,6 +7,7 @@ FactoryGirl.define do
   factory :post do
     title Faker::Hacker.say_something_smart
     link Faker::Internet.url
+    user
   end
 
   factory :comment do

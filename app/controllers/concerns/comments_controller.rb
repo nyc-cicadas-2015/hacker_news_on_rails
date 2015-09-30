@@ -5,10 +5,15 @@ class CommentsController < ApplicationController
   end
 
   def create
-    user = User.find_by(id: session[:user_id])
     post = Post.find_by(id: params[:comment][:post])
-    post.comments.create(body: params[:comment][:body], user_id: user.id)
-    redirect_to show_post_path(post)
+    if logged_in?
+      user = User.find_by(id: session[:user_id])
+      user.comments.create(body: params[:comment][:body])
+      redirect_to show_post_path(post)
+    else
+      flash[:error] = "Login to add comment"
+      redirect_to new_session_path
+    end
   end
 
   private
