@@ -8,4 +8,9 @@ FactoryGirl.define do
     title Faker::Hacker.say_something_smart
     link Faker::Internet.url
   end
+
+  factory :comment do
+    body Faker::Hacker.say_something_smart
+  end
+
 end

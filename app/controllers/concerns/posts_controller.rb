@@ -22,6 +22,15 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def destroy
+    user_id = session[:user_id]
+    post = Post.find(params[:id])
+    if user_id == current_user.id
+      post.destroy
+    end
+    redirect_to posts_path
+  end
+
   private
     def posts_params
       params.require(:post).permit(:title, :link)
