@@ -9,8 +9,10 @@ class SessionsController < ApplicationController
     user = User.find_by(username: user_params[:username])
     if user && user.password == user_params[:password]
       session[:user_id] = user.id
+      flash[:message] = "Welcome #{user.username}!!"
       redirect_to posts_path
     else
+      flash[:error] = "Incorrect username or password"
       redirect_to new_session_path
     end
   end
