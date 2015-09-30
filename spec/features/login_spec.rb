@@ -20,6 +20,10 @@ describe "the login/logout process", :type => :feature do
     expect(page).to have_content 'Log out'
   end
 
+  it "greets user with welcome message" do
+    expect(page).to have_content "Welcome #{user[:username]}"
+  end
+
   it "logs me out" do
     click_link "Log out"
     expect(page).to have_content "Sign Up"
