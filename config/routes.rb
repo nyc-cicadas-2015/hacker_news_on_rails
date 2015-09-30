@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/posts/new' => 'posts#new', as: 'new_post'
   post '/posts' => 'posts#create'
   get '/posts/:id' => 'posts#show', as: 'show_post'
+  delete '/posts/:id' => 'posts#destroy'
 
   get '/comments' => 'comments#index'
   post '/comments' => 'comments#create'

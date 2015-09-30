@@ -1,7 +1,7 @@
 <h1><%= @post.title %></h1>
 
 <% if @post.user == current_user %>
-  <%= link_to "Delete", posts_path(@post), :method => :delete %>
+  <%= link_to "Delete", show_post_path(@post), :method => :delete %>
 <% end %>
 
 <%= render :partial => 'comments/form', locals: { post: @post, comment: @comment } %>

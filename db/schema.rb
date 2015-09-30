@@ -25,14 +25,18 @@ ActiveRecord::Schema.define(version: 20150928212045) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string  "title"
-    t.string  "link"
-    t.integer "user_id", null: false
+    t.string   "title",      null: false
+    t.string   "link",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id",    null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_hash"
+    t.string   "username",      null: false
+    t.string   "password_hash", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
